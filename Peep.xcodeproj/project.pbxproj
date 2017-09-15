@@ -10,6 +10,9 @@
 		FDDFFF9A1F6BEDFA00FE67C3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDFFF991F6BEDFA00FE67C3 /* AppDelegate.swift */; };
 		FDDFFF9C1F6BEDFA00FE67C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FDDFFF9B1F6BEDFA00FE67C3 /* Assets.xcassets */; };
 		FDDFFF9F1F6BEDFA00FE67C3 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = FDDFFF9D1F6BEDFA00FE67C3 /* MainMenu.xib */; };
+		FDDFFFA81F6BEF8E00FE67C3 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDFFFA71F6BEF8E00FE67C3 /* WebViewController.swift */; };
+		FDDFFFAA1F6BF02300FE67C3 /* WindowContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDFFFA91F6BF02300FE67C3 /* WindowContentView.swift */; };
+		FDDFFFAC1F6BFC1500FE67C3 /* Peep.icns in Resources */ = {isa = PBXBuildFile; fileRef = FDDFFFAB1F6BF9B100FE67C3 /* Peep.icns */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +22,9 @@
 		FDDFFF9E1F6BEDFA00FE67C3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		FDDFFFA01F6BEDFA00FE67C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FDDFFFA11F6BEDFA00FE67C3 /* Peep.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Peep.entitlements; sourceTree = "<group>"; };
+		FDDFFFA71F6BEF8E00FE67C3 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		FDDFFFA91F6BF02300FE67C3 /* WindowContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowContentView.swift; sourceTree = "<group>"; };
+		FDDFFFAB1F6BF9B100FE67C3 /* Peep.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Peep.icns; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +62,9 @@
 				FDDFFF9D1F6BEDFA00FE67C3 /* MainMenu.xib */,
 				FDDFFFA01F6BEDFA00FE67C3 /* Info.plist */,
 				FDDFFFA11F6BEDFA00FE67C3 /* Peep.entitlements */,
+				FDDFFFA71F6BEF8E00FE67C3 /* WebViewController.swift */,
+				FDDFFFA91F6BF02300FE67C3 /* WindowContentView.swift */,
+				FDDFFFAB1F6BF9B100FE67C3 /* Peep.icns */,
 			);
 			path = Peep;
 			sourceTree = "<group>";
@@ -93,6 +102,11 @@
 					FDDFFF951F6BEDFA00FE67C3 = {
 						CreatedOnToolsVersion = 9.0;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -121,6 +135,7 @@
 			files = (
 				FDDFFF9C1F6BEDFA00FE67C3 /* Assets.xcassets in Resources */,
 				FDDFFF9F1F6BEDFA00FE67C3 /* MainMenu.xib in Resources */,
+				FDDFFFAC1F6BFC1500FE67C3 /* Peep.icns in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -132,6 +147,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				FDDFFF9A1F6BEDFA00FE67C3 /* AppDelegate.swift in Sources */,
+				FDDFFFA81F6BEF8E00FE67C3 /* WebViewController.swift in Sources */,
+				FDDFFFAA1F6BF02300FE67C3 /* WindowContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,13 +275,13 @@
 		FDDFFFA51F6BEDFA00FE67C3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Peep/Peep.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 76HHL38JW8;
 				INFOPLIST_FILE = Peep/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				PRODUCT_BUNDLE_IDENTIFIER = io.neat.Peep;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -274,13 +291,13 @@
 		FDDFFFA61F6BEDFA00FE67C3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Peep/Peep.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 76HHL38JW8;
 				INFOPLIST_FILE = Peep/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				PRODUCT_BUNDLE_IDENTIFIER = io.neat.Peep;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
