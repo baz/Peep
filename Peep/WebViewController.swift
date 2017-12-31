@@ -9,16 +9,17 @@
 import Cocoa
 import WebKit
 
-class WebViewController: NSViewController, WKNavigationDelegate {
+class WebViewController: NSViewController, WKNavigationDelegate, WKUIDelegate {
 
 	@IBOutlet weak var webView: WKWebView?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
 		let twitterURL = URL(string: "https://mobile.twitter.com/home")
 		let request = URLRequest(url: twitterURL!)
 		self.webView?.load(request)
+        self.webView?.uiDelegate = self
     }
 
 	public func scrollToTop() {
@@ -37,4 +38,15 @@ class WebViewController: NSViewController, WKNavigationDelegate {
 		}
 	}
     
+    func webView(_ webView: WKWebView, runOpenPanelWith parameters: WKOpenPanelParameters, initiatedByFrame frame: WKFrameInfo, completionHandler: @escaping ([URL]?) -> Void) {
+        let openPanel = NSOpenPanel()
+        openPanel.canChooseFiles = true
+        openPanel.begin { (result) in
+            if result.rawValue == NSFileHandlingPanelOKButton {
+                if let url = openPanel.url {
+                    completionHandler([url])
+                }
+            }
+        }
+    }
 }
