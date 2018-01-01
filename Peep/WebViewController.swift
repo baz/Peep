@@ -37,7 +37,7 @@ class WebViewController: NSViewController, WKNavigationDelegate, WKUIDelegate {
 			decisionHandler(.allow)
 		}
 	}
-    
+
     func webView(_ webView: WKWebView, runOpenPanelWith parameters: WKOpenPanelParameters, initiatedByFrame frame: WKFrameInfo, completionHandler: @escaping ([URL]?) -> Void) {
         let openPanel = NSOpenPanel()
         openPanel.canChooseFiles = true
